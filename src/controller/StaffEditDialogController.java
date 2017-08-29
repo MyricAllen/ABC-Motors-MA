@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import model.Staff;
 
-public class StaffEditDiaglogController {
+public class StaffEditDialogController {
 
 	@FXML
 	private TextField phoneNoField;

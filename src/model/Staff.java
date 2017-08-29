@@ -5,12 +5,16 @@ import java.util.UUID;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public abstract class Staff {
+public class Staff {
 	private UUID id;
 	private StringProperty name;
 	private StringProperty phoneNo;
 	private String email;
 	private String address;
+	
+	public Staff(){
+		this.id = UUID.randomUUID();
+	}
 	
 	public Staff(UUID id, String name, String phoneNo, String email, String address) {
 		this.id = id;
@@ -22,6 +26,14 @@ public abstract class Staff {
 	
 	public UUID getid() {
 		return this.id;
+	}
+	
+	public StringProperty getnameProperty(){
+		return name;
+	}
+	
+	public StringProperty getphoneNoProperty(){
+		return phoneNo;
 	}
 	
 	public String getname() {

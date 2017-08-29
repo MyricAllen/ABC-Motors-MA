@@ -159,7 +159,7 @@ public class MainController extends Application {
 			// Set the person into the controller.
 			final StaffEditDialogController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
-			controller.setVehicle(selectedStaff);
+			controller.setStaff(selectedStaff);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();
@@ -169,5 +169,9 @@ public class MainController extends Application {
 			e.printStackTrace();
 			return false;
 		}
+	}
+	
+	public ObservableList<Staff> getStaffData() {
+		return this.staffData;
 	}
 }

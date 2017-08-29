@@ -1,11 +1,11 @@
 package controller;
 
 	import javafx.fxml.FXML;
-	import javafx.scene.control.Alert;
-	import javafx.scene.control.Label;
-	import javafx.scene.control.TableColumn;
-	import javafx.scene.control.TableView;
-	import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import model.Staff;
 
 
@@ -13,12 +13,9 @@ import model.Staff;
 		@FXML
 		private TableView<Staff> staffTable;
 		@FXML
-		private TableColumn<Staff, String> idColumn;
-		@FXML
 		private TableColumn<Staff, String> nameColumn;
-
 		@FXML
-		private Label phoneNoLabel;
+		private TableColumn<Staff, String> phoneNoColumn;
 
 		@FXML
 		private Label emailLabel;
@@ -39,15 +36,15 @@ import model.Staff;
 	    @FXML
 	    private void initialize() {
 	        // Initialize the teacher table with the two columns.
-	    	idColumn.setCellValueFactory(cellData -> cellData.getValue().getid());
-	        nameColumn.setCellValueFactory(cellData -> cellData.getValue().getname());
+	    	nameColumn.setCellValueFactory(cellData -> cellData.getValue().getnameProperty());
+	        phoneNoColumn.setCellValueFactory(cellData -> cellData.getValue().getphoneNoProperty());
 	        
 	        // Clear teacher details.
-	        showstaffDetails(null);
+	        showStaffDetails(null);
 
 	        // Listen for selection changes and show the teacher details when changed.
 	        staffTable.getSelectionModel().selectedItemProperty().addListener(
-	                (observable, oldValue, newValue) -> showstaffDetails(newValue));
+	                (observable, oldValue, newValue) -> showStaffDetails(newValue));
 	    }
 		
 		 /**
@@ -59,7 +56,7 @@ import model.Staff;
 	        this.mainController = mainController;
 
 	        // Add observable list data to the table
-	        StaffTable.setItems(mainController.getStaffData());
+	        staffTable.setItems(mainController.getStaffData());
 		}
 		
 		 /**
@@ -68,19 +65,15 @@ import model.Staff;
 	     * 
 	     * @param student the student or null
 	     */
-		private void showStaffDetails(final staff Staff) {
-	        if (Staff != null) {
+		private void showStaffDetails(final Staff staff) {
+	        if (staff != null) {
 	            // Fill the labels with info from the Staff object.
-	            categoryLabel.setText(Staff.getCategoryString());
-	            VINLabel.setText(Staff.getVin());
-	            costPriceLabel.setText("£" + String.valueOf( Staff.getCostPrice()));
-	            makeLabel.setText(Staff.getmake());
+	           emailLabel.setText(staff.getemail());
+	            addressLabel.setText(staff.getaddress());
 	        } else {
 	            // Staff is null, remove all the text.
-	            categoryLabel.setText("");
-	            VINLabel.setText("");
-	            costPriceLabel.setText("");
-	            makeLabel.setText("");
+	            emailLabel.setText("");
+	            addressLabel.setText("");
 	        }
 	    }
 		
@@ -89,9 +82,9 @@ import model.Staff;
 	     */
 	    @FXML
 	    private void handleDeleteStaff() {
-	        final int selectedIndex = StaffTable.getSelectionModel().getSelectedIndex();
+	        final int selectedIndex = staffTable.getSelectionModel().getSelectedIndex();
 	        if (selectedIndex >= 0) {
-	            StaffTable.getItems().remove(selectedIndex);
+	            staffTable.getItems().remove(selectedIndex);
 	        } else {
 	            // Nothing selected.
 	            final Alert alert = new Alert(AlertType.WARNING);
@@ -120,7 +113,7 @@ import model.Staff;
 	    
 	    @FXML
 	    private void handleEditStaff() {
-	        final Staff selectedStaff = StaffTable.getSelectionModel().getSelectedItem();
+	        final Staff selectedStaff = staffTable.getSelectionModel().getSelectedItem();
 	        if (selectedStaff != null) {
 	            final boolean okClicked = mainController.showStaffEditDialog(selectedStaff);
 	            if (okClicked) {
