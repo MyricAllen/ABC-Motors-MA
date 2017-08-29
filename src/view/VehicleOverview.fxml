@@ -17,7 +17,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <vehicleTableView fx:id="vehicleTable" layoutX="-12.0" layoutY="49.0" prefHeight="298.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="vehicleTable" layoutX="-12.0" layoutY="49.0" prefHeight="298.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="regNoColumn" prefWidth="75.0" text="RegNo" />
                       <TableColumn fx:id="modelColumn" prefWidth="75.0" text="Model" />
