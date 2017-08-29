@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.staffOverviewController">
+<AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StaffController">
    <children>
       <SplitPane dividerPositions="0.29797979797979796" layoutX="153.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="staffTable" layoutX="-12.0" layoutY="49.0" prefHeight="298.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <staffTableView fx:id="staffTable" layoutX="-12.0" layoutY="49.0" prefHeight="298.0" prefWidth="234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
-                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="name" />
+                      <TableColumn fx:id="phoneNoColumn" prefWidth="75.0" text="phoneNo" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -52,9 +52,9 @@
                   </GridPane>
                   <ButtonBar layoutX="54.0" layoutY="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
                     <buttons>
-                      <Button mnemonicParsing="false" onAction="#handleNewstaff" text="New..." />
-                        <Button mnemonicParsing="false" onAction="#handleEditstaff" text="Edit..." />
-                        <Button mnemonicParsing="false" onAction="#handleDeletestaff" text="Delete" />
+                      <Button mnemonicParsing="false" onAction="#handleNewStaff" text="New..." />
+                        <Button mnemonicParsing="false" onAction="#handleEditStaff" text="Edit..." />
+                        <Button mnemonicParsing="false" onAction="#handleDeleteStaff" text="Delete" />
                     </buttons>
                   </ButtonBar>
                </children>

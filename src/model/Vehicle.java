@@ -25,6 +25,7 @@ public class Vehicle {
 		this.vin = vin;
 		this.regNo = new SimpleStringProperty(regNo);
 		this.costPrice = cost;
+		this.categorySet = EnumSet.noneOf(Category.class);
 		this.categorySet.addAll(categories);
 		this.model = new SimpleStringProperty(model);
 		this.make = make;
