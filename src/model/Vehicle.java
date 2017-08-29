@@ -28,7 +28,9 @@ public class Vehicle {
 		this.categorySet = EnumSet.noneOf(Category.class);
 		this.categorySet.addAll(categories);
 		this.model = new SimpleStringProperty(model);
-		this.make = make;
+		this.make = make;if( make.length() > 10 )
+	{
+	    throw new RuntimeException("User name too long");}
 	}
 
 	public String getVin() {

@@ -77,7 +77,7 @@ public class VehicleEditDialogController {
 			Vehicle.setVin(VINField.getText());
 			// Vehicle.setcategory(categoryLabel.getText());// Will have to use
 			// checkboxes
-			Vehicle.setCostPrice(Double.valueOf(costPriceField.getText()));
+			Double.valueOf(costPriceField.getText());;
 
 			okClicked = true;
 			dialogStage.close();
@@ -129,11 +129,11 @@ public class VehicleEditDialogController {
 
 			return false;
 		}
-		
+
 		/**
-	     * Called when the user clicks the edit button. Opens a dialog to edit
-	     * details for the selected trip.
-	     */
-	   
+		 * Called when the user clicks the edit button. Opens a dialog to edit
+		 * details for the selected trip.
+		 */
+
 	}
 }
