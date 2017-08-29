@@ -45,9 +45,9 @@
                         <Label text="PhoneNo" />
                         <Label text="Email" GridPane.rowIndex="1" />
                         <Label text="Address" GridPane.rowIndex="2" />
-                        <Label fx:id="phoneNoField" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="emailField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="addressField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="phoneNoLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="emailLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="addressLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="54.0" layoutY="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
