@@ -16,8 +16,8 @@ public class Staff {
 		this.id = UUID.randomUUID();
 	}
 	
-	public Staff(UUID id, String name, String phoneNo, String email, String address) {
-		this.id = id;
+	public Staff(String name, String phoneNo, String email, String address) {
+		this.id = UUID.randomUUID();
 		this.name = new SimpleStringProperty(name);
 		this.phoneNo = new SimpleStringProperty(phoneNo);
 		this.email = email;

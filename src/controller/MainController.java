@@ -27,8 +27,11 @@ public class MainController extends Application {
 	private final ObservableList<Staff> staffData = FXCollections.observableArrayList();
 
 	public MainController() {
-		vehicleData.add(new Vehicle("6253855627", "HF17 VLA", 26000, EnumSet.of(Category.CONVERTIBLE), "DS", "DS3"));
+		vehicleData.add(new Vehicle("6253855627", "HF17 VLA", 26000, EnumSet.of(Category.CONVERTIBLE, Category.VAN), "DS", "DS3"));
+		staffData.add(new Staff("John Smith", "07456990237", "JohnSmith@Gmail.com", "276 Stiby Road Yeovil BA234UQ"));
 	}
+	
+		
 
 	@Override
 	public void start(final Stage primaryStage) throws Exception {
@@ -52,7 +55,7 @@ public class MainController extends Application {
 			// Set vehicle overview into the first root tab
 			final TabPane tabPane = (TabPane) rootLayout.getCenter();
 			final ObservableList<Tab> tabs = tabPane.getTabs();
-			tabs.get(1).setContent(vehicleOverview);
+			tabs.get(0).setContent(vehicleOverview);
 
 			// Give the controller access to the main app.
 			final VehicleController controller = loader.getController();
