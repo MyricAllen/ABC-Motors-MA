@@ -17,10 +17,10 @@ public class Vehicle {
 	private String make;
 	private StringProperty model;
 
-	public Vehicle(){
-		
+	public Vehicle() {
+
 	}
-	
+
 	public Vehicle(String vin, String regNo, int cost, Set<Category> categories, String model, String make) {
 		this.vin = vin;
 		this.regNo = new SimpleStringProperty(regNo);
@@ -37,10 +37,10 @@ public class Vehicle {
 
 	public String getRegNo() {
 		return this.regNo.get();
-		
+
 	}
-	
-	public StringProperty getRegNoProperty(){
+
+	public StringProperty getRegNoProperty() {
 		return regNo;
 	}
 
@@ -59,50 +59,52 @@ public class Vehicle {
 	public String getmodel() {
 		return this.model.get();
 	}
-	
-	public StringProperty getmodelProperty(){
+
+	public StringProperty getmodelProperty() {
 		return model;
 	}
-	
-	public void setVin(String vin){
-	 this.vin = vin;
+
+	public void setVin(String vin) {
+		this.vin = vin;
 	}
-	
-	public void setregNo(String regNo){
+
+	public void setregNo(String regNo) {
 		this.regNo.set(regNo);
-	
+
 	}
-	
-	public void setCostPrice(Double costPrice){
+
+	public void setCostPrice(Double costPrice) {
 		this.costPrice = costPrice;
 	}
-	
-	public void setmake(String make){
+
+	public void setmake(String make) {
 		this.make = make;
 	}
-	
-	public void setmodel(String model){
+
+	public void setmodel(String model) {
 		this.model.set(model);
 	}
-	
-	public void setCategory(Set<Category> categories){
+
+	public void setCategory(Set<Category> categories) {
 		this.categorySet.addAll(categories);
 	}
-	
 
 	public String getCategoryString() {
 		String result = "";
 		boolean first = true;
 
-		for (Category category : categorySet) {
-			if (first) {
-				first = false;
-			} else {
-				result += ", ";
+		if (categorySet != null)
+		{
+			for (Category category : categorySet) {
+				if (first) {
+					first = false;
+				} else {
+					result += ", ";
+				}
+				result += category.name();
 			}
-			result += category.name();
 		}
-		return result;
+		
+	return result;
 
-	}
-}
+}}

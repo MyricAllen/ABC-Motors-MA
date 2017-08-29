@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="232.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.VehicleEditDialogController">
+<AnchorPane prefHeight="232.0" prefWidth="414.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.VehicleEditDialogController">
    <children>
       <GridPane layoutX="30.0" layoutY="28.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
@@ -32,11 +32,11 @@
             <Label text="Make" GridPane.rowIndex="2" />
             <TextField fx:id="makeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="VIN" GridPane.rowIndex="3" />
-            <TextField fx:id="VinField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="VINField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="Cost Price" GridPane.rowIndex="4" />
             <TextField fx:id="costPriceField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Label text="Category" GridPane.rowIndex="5" />
-            <TextField fx:id="CategoryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="category" GridPane.rowIndex="5" />
+            <TextField fx:id="categoryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
       <ButtonBar layoutX="176.0" layoutY="233.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
