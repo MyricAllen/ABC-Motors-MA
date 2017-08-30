@@ -8,7 +8,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import model.Staff;
 
-
+	/**
+	 * 
+	 * Links the FXML labels and columns ready for use.
+	 *
+	 */
 	public class StaffController {
 		@FXML
 		private TableView<Staff> staffTable;
@@ -35,14 +39,14 @@ import model.Staff;
 	     */
 	    @FXML
 	    private void initialize() {
-	        // Initialize the teacher table with the two columns.
+	        // Initialize the Staff table with the two columns.
 	    	nameColumn.setCellValueFactory(cellData -> cellData.getValue().getnameProperty());
 	        phoneNoColumn.setCellValueFactory(cellData -> cellData.getValue().getphoneNoProperty());
 	        
-	        // Clear teacher details.
+	        // Clear Staff details.
 	        showStaffDetails(null);
 
-	        // Listen for selection changes and show the teacher details when changed.
+	        // Listen for selection changes and show the Staff details when changed.
 	        staffTable.getSelectionModel().selectedItemProperty().addListener(
 	                (observable, oldValue, newValue) -> showStaffDetails(newValue));
 	    }
@@ -63,7 +67,7 @@ import model.Staff;
 	     * Fills all text fields to show details about the Staff.
 	     * If the specified Staff is null, all text fields are cleared.
 	     * 
-	     * @param student the student or null
+	     * @param Staff the Staff or null
 	     */
 		private void showStaffDetails(final Staff staff) {
 	        if (staff != null) {

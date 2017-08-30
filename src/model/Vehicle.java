@@ -20,7 +20,17 @@ public class Vehicle {
 	public Vehicle() {
 
 	}
-
+	
+	/**
+	 * 
+	 * @param vin
+	 * @param regNo
+	 * @param cost
+	 * @param categories
+	 * @param model
+	 * @param make
+	 */
+	
 	public Vehicle(String vin, String regNo, int cost, Set<Category> categories, String model, String make) {
 		this.vin = vin;
 		this.regNo = new SimpleStringProperty(regNo);
@@ -33,6 +43,10 @@ public class Vehicle {
 	    throw new RuntimeException("User name too long");}
 	}
 
+	/**
+	 * 
+	 * Getters and setters
+	 */
 	public String getVin() {
 		return this.vin;
 	}

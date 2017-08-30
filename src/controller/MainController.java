@@ -26,6 +26,10 @@ public class MainController extends Application {
 	private final ObservableList<Vehicle> vehicleData = FXCollections.observableArrayList();
 	private final ObservableList<Staff> staffData = FXCollections.observableArrayList();
 
+	
+	/**
+	 * Main Controller with sample data input at start.
+	 */
 	public MainController() {
 		vehicleData.add(new Vehicle("6253855627", "HF17 VLA", 26000, EnumSet.of(Category.CONVERTIBLE, Category.VAN), "DS", "DS3"));
 		staffData.add(new Staff("John Smith", "07456990237", "JohnSmith@Gmail.com", "276 Stiby Road Yeovil BA234UQ"));
@@ -108,7 +112,7 @@ public class MainController extends Application {
 			final Scene scene = new Scene(page);
 			dialogStage.setScene(scene);
 
-			// Set the person into the controller.
+			// Set the Vehicle into the controller.
 			final VehicleEditDialogController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
 			controller.setVehicle(tempVehicle);

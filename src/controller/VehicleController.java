@@ -40,14 +40,14 @@ public class VehicleController {
      */
     @FXML
     private void initialize() {
-        // Initialize the teacher table with the two columns.
+        // Initialize the Vehicle table with the two columns.
     	regNoColumn.setCellValueFactory(cellData -> cellData.getValue().getRegNoProperty());
         modelColumn.setCellValueFactory(cellData -> cellData.getValue().getmodelProperty());
         
-        // Clear teacher details.
+        // Clear Vehicle details.
         showVehicleDetails(null);
 
-        // Listen for selection changes and show the teacher details when changed.
+        // Listen for selection changes and show the Vehicle details when changed.
         vehicleTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showVehicleDetails(newValue));
     }
@@ -68,7 +68,7 @@ public class VehicleController {
      * Fills all text fields to show details about the vehicle.
      * If the specified vehicle is null, all text fields are cleared.
      * 
-     * @param student the student or null
+     * @param Vehicle the Vehicle or null
      */
 	private void showVehicleDetails(final Vehicle Vehicle) {
         if (Vehicle != null) {
