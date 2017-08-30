@@ -40,7 +40,7 @@ public class Vehicle {
 		this.model = new SimpleStringProperty(model);
 		this.make = make;if( make.length() > 10 )
 	{
-	    throw new RuntimeException("User name too long");}
+	    throw new RuntimeException("model name too long");}
 	}
 
 	/**
